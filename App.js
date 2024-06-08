@@ -47,7 +47,7 @@ import SwitchServiceType from "./screens/SwitchServiceType";
 import ThankYouCard from "./screens/ThankYouCard";
 
 const BASE_URL = "https://newcaraid.onrender.com/api/";
-const LOCAL_BASE_URL = "http://192.168.1.6:9090/api/";
+const LOCAL_BASE_URL = "https://newcaraid.onrender.com/api/";
 
 const Stack = createNativeStackNavigator();
 export const AuthContext = createContext();
