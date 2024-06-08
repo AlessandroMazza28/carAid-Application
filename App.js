@@ -47,7 +47,7 @@ import SwitchServiceType from "./screens/SwitchServiceType";
 import ThankYouCard from "./screens/ThankYouCard";
 
 const BASE_URL = "https://newcaraid.onrender.com/api/";
-const LOCAL_BASE_URL = "https://newcaraid.onrender.com/api/";
+const LOCAL_BASE_URL ="https://newcaraid.onrender.com/api/";
 
 const Stack = createNativeStackNavigator();
 export const AuthContext = createContext();
@@ -139,7 +139,7 @@ export default function App() {
         userToken = await SecureStore.getItemAsync("userToken");
         if (userToken) {
           console.log("Token retrieved:", userToken);
-
+      
           const userResponse = await axios.get(
             `${LOCAL_BASE_URL}profile/getProfile`,
             {
@@ -199,7 +199,7 @@ export default function App() {
       signIn: async (data) => {
         try {
           console.log("signIn: Attempting to sign in with data", data);
-          const response = await axios.post(`${BASE_URL}users/login`, data);
+          const response = await axios.post(`https://newcaraid.onrender.com/api/users/login`, data);
           console.log("signIn: Response received", response);
 
           const token = response.data.accessToken;
@@ -215,8 +215,8 @@ export default function App() {
           console.log("signIn: User response received", userResponse);
 
           const user = userResponse.data;
-          console.log("userdata", user);
-          console.log("userRole", user.role);
+          // console.log("userdata", user);
+          // console.log("userRole", user.role);
 
           const vehiclesResponse = await axios.get(
             `${LOCAL_BASE_URL}vehicle/getAllVehiclesForUser`,

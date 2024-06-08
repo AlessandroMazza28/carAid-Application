@@ -31,7 +31,7 @@ export default function Login({ navigation, login }) {
 
     try {
       await signIn(data);
-      navigation.navigate("PersonalDocuments")
+      // navigation.navigate("PersonalDocuments")
     } catch (err) {
       console.log(err.response.status);
       if (err.response.status) {
@@ -142,7 +142,7 @@ export default function Login({ navigation, login }) {
 
         <Button
           title="Login"
-          filled
+          // filled
           onPress={handleLogin}
           style={{
             marginTop: 18,
